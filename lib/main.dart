@@ -5,10 +5,8 @@ void main() {
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
-  void hi() {
-    print("Hi");
-  }
+  String name = 'INIT ';
+  MyApp({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -17,11 +15,17 @@ class MyApp extends StatelessWidget {
         appBar: AppBar(
           title: Text('My First App'),
         ),
-        body: Container(
-          child: TextButton(
-            onPressed: hi,
-            child: Text('Clilck me'),
-          ),
+        body: Column(
+          children: [
+            TextButton(
+              onPressed: () {
+                name = 'APP';
+                print(name);
+              },
+              child: Text('Clilck me'),
+            ),
+            Text(name),
+          ],
         ),
       ),
     );
