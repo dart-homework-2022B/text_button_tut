@@ -6,6 +6,9 @@ void main() {
 
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
+  void hi() {
+    print("Hi");
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -14,7 +17,12 @@ class MyApp extends StatelessWidget {
         appBar: AppBar(
           title: Text('My First App'),
         ),
-        body: Container(),
+        body: Container(
+          child: TextButton(
+            onPressed: hi,
+            child: Text('Clilck me'),
+          ),
+        ),
       ),
     );
   }
